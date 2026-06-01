@@ -64,11 +64,11 @@ export function ProjectCollisionPrompt() {
   const hasExistingWalletProject = prompt.hasConnectedWalletEntity
   const accent = hasExistingWalletProject
     ? {
-        ring: 'ring-orange-200/70',
-        iconBg: 'bg-gradient-to-br from-orange-100 to-orange-200/60',
-        iconColor: 'text-[#ff7a45]',
-        glow: 'shadow-orange-500/20',
-        chip: 'bg-orange-50 text-[#ff7a45] ring-1 ring-inset ring-orange-200',
+        ring: 'ring-blue-800/70',
+        iconBg: 'bg-gradient-to-br from-blue-900 to-blue-800/60',
+        iconColor: 'text-[#3b82f6]',
+        glow: 'shadow-blue-500/20',
+        chip: 'bg-blue-950 text-[#3b82f6] ring-1 ring-inset ring-blue-800',
       }
     : {
         ring: 'ring-rose-200/70',
@@ -92,12 +92,12 @@ export function ProjectCollisionPrompt() {
         type="button"
         aria-label="Dismiss project collision prompt"
         onClick={dismissProjectCollisionPrompt}
-        className="absolute inset-0 cursor-default bg-gray-950/20 backdrop-blur-[2px]"
+        className="absolute inset-0 cursor-default bg-black/60 backdrop-blur-[2px]"
       />
 
       <div
         className={[
-          'relative w-[min(36rem,calc(100vw-2rem))] overflow-hidden rounded-2xl bg-white shadow-2xl',
+          'relative w-[min(36rem,calc(100vw-2rem))] overflow-hidden bg-[#141414] shadow-2xl',
           'ring-1',
           accent.ring,
           accent.glow,
@@ -109,7 +109,7 @@ export function ProjectCollisionPrompt() {
           className={[
             'pointer-events-none absolute inset-x-0 top-0 h-[3px]',
             hasExistingWalletProject
-              ? 'bg-gradient-to-r from-orange-400 via-orange-500 to-orange-400'
+              ? 'bg-gradient-to-r from-blue-500 via-blue-500 to-blue-500'
               : 'bg-gradient-to-r from-rose-400 via-rose-500 to-rose-400',
           ].join(' ')}
         />
@@ -118,7 +118,7 @@ export function ProjectCollisionPrompt() {
           type="button"
           aria-label="Dismiss project collision prompt"
           onClick={dismissProjectCollisionPrompt}
-          className="absolute right-4 top-4 z-10 rounded-lg p-1.5 text-gray-400 transition hover:bg-gray-100 hover:text-gray-700"
+          className="absolute right-4 top-4 z-10 p-1.5 text-gray-500 transition hover:bg-white/10 hover:text-gray-300"
         >
           <X className="size-4" />
         </button>
@@ -127,7 +127,7 @@ export function ProjectCollisionPrompt() {
           <div className="flex items-start gap-4">
             <div
               className={[
-                'flex size-11 shrink-0 items-center justify-center rounded-xl ring-1 ring-inset ring-white/60',
+                'flex size-11 shrink-0 items-center justify-center ring-1 ring-inset ring-white/60',
                 accent.iconBg,
                 accent.iconColor,
               ].join(' ')}
@@ -142,7 +142,7 @@ export function ProjectCollisionPrompt() {
             <div className="min-w-0 flex-1 pr-8">
               <p
                 id="project-collision-title"
-                className="font-mono text-[11px] font-bold uppercase tracking-widest text-gray-500"
+                className="font-mono text-[11px] font-bold uppercase tracking-widest text-gray-400"
               >
                 {title}
               </p>
@@ -150,7 +150,7 @@ export function ProjectCollisionPrompt() {
               <div className="mt-2">
                 <span
                   className={[
-                    'inline-flex max-w-full items-center truncate rounded-md px-2 py-0.5 font-mono text-sm font-bold',
+                    'inline-flex max-w-full items-center truncate px-2 py-0.5 font-mono text-sm font-bold',
                     accent.chip,
                   ].join(' ')}
                 >
@@ -159,22 +159,22 @@ export function ProjectCollisionPrompt() {
               </div>
 
               {hasExistingWalletProject ? (
-                <p className="mt-3 text-sm leading-6 text-gray-700">
+                <p className="mt-3 text-sm leading-6 text-gray-300">
                   Your wallet already has{' '}
-                  <span className="font-semibold text-gray-950">
+                  <span className="font-semibold text-white">
                     {prompt.connectedWalletEntityCount} {connectedEntityNoun}
                   </span>{' '}
                   in this project namespace. Load the existing project, or
                   continue adding this draft to it.
                 </p>
               ) : (
-                <p className="mt-3 text-sm leading-6 text-gray-700">
+                <p className="mt-3 text-sm leading-6 text-gray-300">
                   This project namespace is already used by{' '}
-                  <span className="font-semibold text-gray-950">
+                  <span className="font-semibold text-white">
                     {prompt.otherWalletEntityCount} {otherEntityNoun}
                   </span>{' '}
                   from{' '}
-                  <span className="font-mono font-bold text-gray-950">
+                  <span className="font-mono font-bold text-white">
                     {shortAddress(prompt.otherOwner ?? prompt.otherCreator)}
                   </span>
                   , but your connected wallet has no entities here yet. Choose a
@@ -187,11 +187,11 @@ export function ProjectCollisionPrompt() {
 
           <form
             onSubmit={updateProjectAttribute}
-            className="mt-5 rounded-xl border border-gray-200 bg-gray-50 p-3"
+            className="mt-5 border border-white/10 bg-white/5 p-3"
           >
             <label
               htmlFor="project-collision-project-attribute"
-              className="font-mono text-[10px] font-bold uppercase tracking-widest text-gray-500"
+              className="font-mono text-[10px] font-bold uppercase tracking-widest text-gray-400"
             >
               Use a different namespace
             </label>
@@ -201,7 +201,7 @@ export function ProjectCollisionPrompt() {
                 id="project-collision-project-attribute"
                 name="projectAttribute"
                 defaultValue={suggestedProjectAttribute}
-                className="h-10 min-w-0 flex-1 rounded-lg border border-gray-200 bg-white px-3 font-mono text-xs text-gray-900 shadow-sm outline-none transition focus:border-gray-400 focus:ring-2 focus:ring-gray-200 disabled:cursor-not-allowed disabled:opacity-70"
+                className="h-10 min-w-0 flex-1 border border-white/10 bg-[#141414] px-3 font-mono text-xs text-white shadow-sm outline-none transition focus:border-white/20 focus:ring-2 focus:ring-white/10 disabled:cursor-not-allowed disabled:opacity-70"
                 placeholder="project_slug_acme_7x9k"
                 disabled={!activeDraftNodeId}
               />
@@ -210,7 +210,7 @@ export function ProjectCollisionPrompt() {
                 type="submit"
                 size="sm"
                 disabled={!activeDraftNodeId}
-                className="h-10 shrink-0 rounded-lg bg-[#1a1a1a] px-4 font-mono text-[11px] font-bold uppercase tracking-widest text-white shadow-sm hover:bg-[#333] disabled:opacity-70"
+                className="h-10 shrink-0 bg-[#2563eb] px-4 font-mono text-[11px] font-bold uppercase tracking-widest text-white shadow-sm hover:bg-[#1d4ed8] disabled:opacity-70"
               >
                 Change
               </Button>
@@ -218,13 +218,13 @@ export function ProjectCollisionPrompt() {
           </form>
         </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-2 border-t border-gray-100 bg-gray-50/60 px-6 py-4">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-t border-white/10 bg-white/5 px-6 py-4">
           <Button
             type="button"
             size="sm"
             variant="outline"
             onClick={ignoreProjectCollisionPrompt}
-            className="h-9 rounded-lg border-gray-200 bg-white px-3 font-mono text-[11px] font-bold uppercase tracking-widest text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+            className="h-9 border-white/10 bg-[#141414] px-3 font-mono text-[11px] font-bold uppercase tracking-widest text-gray-400 hover:bg-white/5 hover:text-white"
           >
             {hasExistingWalletProject ? 'Add to this project' : 'Use existing namespace'}
           </Button>
@@ -241,7 +241,7 @@ export function ProjectCollisionPrompt() {
                     })
                   }
                   disabled={loadingSelectedEntity}
-                  className="h-9 rounded-lg bg-[#ff7a45] px-3 font-mono text-[11px] font-bold uppercase tracking-widest text-white shadow-sm hover:bg-[#ff692a] disabled:opacity-70"
+                  className="h-9 bg-[#3b82f6] px-3 font-mono text-[11px] font-bold uppercase tracking-widest text-white shadow-sm hover:bg-[#2563eb] disabled:opacity-70"
                 >
                   {loadingSelectedEntity ? 'Loading...' : 'Keep draft + load'}
                 </Button>
@@ -251,7 +251,7 @@ export function ProjectCollisionPrompt() {
                   size="sm"
                   onClick={() => loadProjectEntitiesIntoCanvas(prompt.projectAttributeValue)}
                   disabled={loadingSelectedEntity}
-                  className="h-9 rounded-lg bg-[#1a1a1a] px-3 font-mono text-[11px] font-bold uppercase tracking-widest text-white shadow-sm hover:bg-[#333] disabled:opacity-70"
+                  className="h-9 bg-[#2563eb] px-3 font-mono text-[11px] font-bold uppercase tracking-widest text-white shadow-sm hover:bg-[#1d4ed8] disabled:opacity-70"
                 >
                   {loadingSelectedEntity ? 'Loading...' : 'Load project'}
                 </Button>
@@ -266,7 +266,7 @@ export function ProjectCollisionPrompt() {
                   })
                 }
                 disabled={loadingSelectedEntity}
-                className="h-9 rounded-lg bg-rose-600 px-3 font-mono text-[11px] font-bold uppercase tracking-widest text-white shadow-sm hover:bg-rose-700 disabled:opacity-70"
+                className="h-9 bg-rose-600 px-3 font-mono text-[11px] font-bold uppercase tracking-widest text-white shadow-sm hover:bg-rose-700 disabled:opacity-70"
               >
                 {loadingSelectedEntity ? 'Loading...' : 'View matching entities'}
               </Button>

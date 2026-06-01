@@ -27,7 +27,7 @@ import {
 import { sanitizeIdentifier } from '@/lib/arkiv/schema'
 
 const RELATION_COLORS = [
-  '#ff7a45',
+  '#3b82f6',
   '#0ea5e9',
   '#10b981',
   '#a855f7',

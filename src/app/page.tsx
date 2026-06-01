@@ -40,7 +40,7 @@ import { useSchemaStore } from "@/store/useSchemaStore";
 
 const DEFAULT_EDGE_OPTIONS = {
   type: 'smoothstep',
-  markerEnd: { type: MarkerType.ArrowClosed, width: 18, height: 18, color: '#ff7a45' },
+  markerEnd: { type: MarkerType.ArrowClosed, width: 18, height: 18, color: '#3b82f6' },
   style: { strokeWidth: 2.5 },
 }
 
@@ -152,7 +152,7 @@ function SchemaCanvas() {
   }, [initializeArkiv, startBalanceSync]);
 
   return (
-    <div className="relative h-screen w-screen overflow-hidden bg-[#fafafa]">
+    <div className="relative h-screen w-screen overflow-hidden bg-[#0a0a0a]">
       <TopNav />
 
       <div className="pointer-events-none absolute inset-0 z-10">
@@ -163,7 +163,7 @@ function SchemaCanvas() {
           aria-label="Close AI assistant"
           tabIndex={isAiPanelOpen ? 0 : -1}
           aria-hidden={!isAiPanelOpen}
-          className={`absolute inset-0 z-30 cursor-default bg-white/30 backdrop-blur-sm transition-opacity duration-300 ${
+          className={`absolute inset-0 z-30 cursor-default bg-black/40 backdrop-blur-sm transition-opacity duration-300 ${
             isAiPanelOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
           }`}
           onClick={() => setIsAiPanelOpen(false)}
@@ -172,10 +172,10 @@ function SchemaCanvas() {
         <div className="absolute top-[110px] bottom-6 left-6 flex min-h-0 flex-col transition-all duration-300">
           <Button
             variant={isMenuOpen ? "ghost" : "outline"}
-            className={`pointer-events-auto absolute z-20 flex p-0 items-center justify-center rounded-lg transition-all duration-300 ${
+            className={`pointer-events-auto absolute z-20 flex p-0 items-center justify-center transition-all duration-300 ${
               isMenuOpen 
-                ? 'h-8 w-8 top-3 left-[334px] text-[#ff7a45] hover:text-[#e66a39] bg-[#fff5f0] hover:bg-[#ffebe0]' 
-                : 'h-10 w-10 top-0 left-0 bg-white border border-gray-200 shadow-sm text-[#ff7a45] hover:text-[#e66a39] hover:bg-[#fff5f0]'
+                ? 'h-8 w-8 top-3 left-[334px] text-[#3b82f6] hover:text-[#60a5fa] bg-[#13213d] hover:bg-[#1a2c4d]' 
+                : 'h-10 w-10 top-0 left-0 bg-[#141414] border border-white/10 shadow-sm text-[#3b82f6] hover:text-[#60a5fa] hover:bg-[#13213d]'
             }`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
@@ -201,7 +201,7 @@ function SchemaCanvas() {
                 <Button
                   variant="outline"
                   onClick={() => void handleCopyCanvasModel()}
-                  className="flex h-11 items-center gap-2 rounded-xl border border-[#ffc4a6] bg-[#fff8f4] px-4 font-bold shadow-sm transition hover:bg-[#fff0e8] text-[#ff7a45] hover:text-[#e66a39]"
+                  className="flex h-11 items-center gap-2 border border-[#1e3a5f] bg-[#13213d] px-4 font-bold shadow-sm transition hover:bg-[#13213d] text-[#3b82f6] hover:text-[#60a5fa]"
                 >
                   <Clipboard className="size-4" />
                   Copy Model
@@ -210,7 +210,7 @@ function SchemaCanvas() {
                   variant="outline"
                   onClick={() => void handlePasteCanvasModel()}
                   disabled={isPastingModel}
-                  className="flex h-11 items-center gap-2 rounded-xl border border-[#ffc4a6] bg-[#fff8f4] px-4 font-bold shadow-sm transition hover:bg-[#fff0e8] text-[#ff7a45] hover:text-[#e66a39] disabled:opacity-50"
+                  className="flex h-11 items-center gap-2 border border-[#1e3a5f] bg-[#13213d] px-4 font-bold shadow-sm transition hover:bg-[#13213d] text-[#3b82f6] hover:text-[#60a5fa] disabled:opacity-50"
                 >
                   <ClipboardPaste className="size-4" />
                   {isPastingModel ? 'Pasting...' : 'Paste Model'}
@@ -220,7 +220,7 @@ function SchemaCanvas() {
             <Button
               variant="outline"
               onClick={clearCanvas}
-              className="flex h-11 items-center gap-2 rounded-xl border border-[#ffb3ad] bg-[#fff0ee] px-4 font-bold shadow-sm transition hover:bg-[#ffe1de] text-[#ff3b30] hover:text-red-600"
+              className="flex h-11 items-center gap-2 border border-[#5f1e1e] bg-[#2e1416] px-4 font-bold shadow-sm transition hover:bg-[#3a1a1c] text-[#ff3b30] hover:text-red-600"
             >
               <Trash2 className="size-4" />
               Clear Canvas
@@ -233,18 +233,18 @@ function SchemaCanvas() {
             <button
               type="button"
               onClick={() => setIsAiPanelOpen(true)}
-              className={`group pointer-events-auto absolute inset-x-0 bottom-0 flex h-[3.9rem] items-center justify-between rounded-[1.6rem] border border-[#ffd8c3] bg-white/95 px-5 text-left shadow-[0_14px_32px_rgba(15,23,42,0.14)] backdrop-blur-md transition-all duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] transform-gpu [will-change:transform,opacity] hover:border-[#ffc3a6] hover:bg-white ${
+              className={`group pointer-events-auto absolute inset-x-0 bottom-0 flex h-[3.9rem] items-center justify-between border border-[#1e3a5f] bg-[#141414]/95 px-5 text-left shadow-[0_14px_32px_rgba(15,23,42,0.14)] backdrop-blur-md transition-all duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] transform-gpu [will-change:transform,opacity] hover:border-[#1e3a5f] hover:bg-[#141414] ${
                 isAiPanelOpen
                   ? 'pointer-events-none translate-y-2 scale-[0.985] opacity-0'
                   : 'pointer-events-auto translate-y-0 scale-100 opacity-100'
               }`}
               title="Open AI assistant"
             >
-              <p className="font-mono text-sm font-normal leading-none tracking-wide text-gray-500">
+              <p className="font-mono text-sm font-normal leading-none tracking-wide text-gray-400">
                 Ask for follow-up changes
               </p>
 
-              <div className="flex size-8 items-center justify-center rounded-full bg-[#f2f4f7] text-gray-500 transition group-hover:bg-[#ffefe5] group-hover:text-[#ff7a45]">
+              <div className="flex size-8 items-center justify-center bg-[#1c1c1c] text-gray-400 transition group-hover:bg-[#1a2c4d] group-hover:text-[#3b82f6]">
                 <ArrowUp className="size-4" />
               </div>
             </button>
@@ -303,7 +303,7 @@ function SchemaCanvas() {
             showInteractive={false}
             orientation="horizontal"
             position="bottom-center"
-            className="!bottom-6 !left-1/2 !-translate-x-1/2 !overflow-hidden !rounded-[10px] !border !border-gray-200/50 !bg-white/40 !shadow-sm !backdrop-blur-md"
+            className="!bottom-6 !left-1/2 !-translate-x-1/2 !overflow-hidden !border !border-white/10 !bg-[#141414]/40 !shadow-sm !backdrop-blur-md"
           />
         </ReactFlow>
       </div>

@@ -33,25 +33,25 @@ export function TopNav() {
   const onArkivNetwork = chainId === ARKIV_CHAIN.id
 
   return (
-    <div className="absolute top-6 left-6 right-6 z-50">
-      <nav className="flex items-center justify-between rounded-[20px] border border-white/40 bg-white/80 backdrop-blur-xl px-6 py-4 shadow-xl shadow-gray-200/50 transition-all duration-300 hover:shadow-2xl hover:shadow-gray-200/60">
+    <div className="fixed top-0 left-0 right-0 z-50">
+      <nav className="flex items-center justify-between border-b border-white/10 bg-[#0a0a0a]/70 backdrop-blur-2xl px-8 py-4 shadow-lg shadow-black/40">
         {/* Logo */}
-        <Link href="/" className="font-mono text-xl font-bold tracking-widest text-[#111] hover:opacity-70 transition-opacity">
+        <Link href="/" className="font-mono text-xl font-bold tracking-widest text-[#ffffff] hover:opacity-70 transition-opacity">
           [ ARKIV BUILD ]
         </Link>
 
         {/* Actions */}
         <div className="flex items-center gap-6">
-          <div className="hidden md:flex items-center gap-4 mr-4 font-mono text-xs font-semibold tracking-wide text-gray-700">
+          <div className="hidden md:flex items-center gap-4 mr-4 font-mono text-xs font-semibold tracking-wide text-gray-300">
             <Link
               href={ARKIV_FAUCET_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center h-8 rounded-lg bg-orange-500 text-white px-4 shadow-md shadow-orange-500/20 hover:bg-orange-600 hover:scale-105 hover:shadow-orange-500/40 active:scale-95 transition-all duration-300"
+              className="flex items-center h-8 bg-blue-500 text-white px-4 shadow-md shadow-blue-500/20 hover:bg-blue-400 hover:scale-105 hover:shadow-blue-500/40 active:scale-95 transition-all duration-300"
             >
               Faucet
             </Link>
-            <Link href={ARKIV_DOCS_URL} target="_blank" rel="noopener noreferrer" className="hover:text-black hover:-translate-y-0.5 transition-all duration-300">
+            <Link href={ARKIV_DOCS_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white hover:-translate-y-0.5 transition-all duration-300">
               Docs
             </Link>
           </div>
@@ -60,10 +60,10 @@ export function TopNav() {
             <div className="flex items-center">
               <span
                 className={[
-                  'shrink-0 rounded-md px-2.5 py-1.5 text-[10px] font-bold uppercase tracking-wider',
+                  'shrink-0 px-2.5 py-1.5 text-[10px] font-bold uppercase tracking-wider',
                   onArkivNetwork
-                    ? 'bg-[#e6f4ea] text-[#137333]'
-                    : 'bg-[#fce8e6] text-[#c5221f]',
+                    ? 'bg-[#0e2a18] text-[#4ade80]'
+                    : 'bg-[#2e1413] text-[#f87171]',
                 ].join(' ')}
               >
                 {onArkivNetwork ? 'Braga' : 'Wrong network'}
@@ -74,7 +74,7 @@ export function TopNav() {
                   variant="outline"
                   size="sm"
                   onClick={retryNetworkSwitch}
-                  className="ml-2 h-8 rounded-lg px-3 text-xs shadow-sm bg-white"
+                  className="ml-2 h-8 px-3 text-xs shadow-sm bg-[#141414]"
                 >
                   Switch
                 </Button>
@@ -85,14 +85,14 @@ export function TopNav() {
           <div className="flex items-center gap-2">
             {/* Balance pill */}
             {account && (
-              <div className="flex items-center h-10 px-4 rounded-xl border border-gray-200 bg-white shadow-sm font-mono text-sm font-semibold text-gray-700">
+              <div className="flex items-center h-10 px-4 border border-white/10 bg-[#141414] shadow-sm font-mono text-sm font-semibold text-gray-300">
                 {balance ? `${Number(balance).toFixed(4)} GLM` : 'Loading...'}
               </div>
             )}
 
             {/* Wallet pill */}
             {account ? (
-              <div className="flex items-center h-10 rounded-xl bg-[#1f1f1f] shadow-lg shadow-black/10 font-mono font-semibold text-white text-sm overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-black/20">
+              <div className="flex items-center h-10 border border-white/10 bg-[#1c1c1c] shadow-lg shadow-black/30 font-mono font-semibold text-white text-sm overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-black/40">
                 {/* Left zone: address → hover shows Disconnect wallet, click disconnects */}
                 <button
                   id="wallet-menu-btn"
@@ -118,7 +118,7 @@ export function TopNav() {
 
                 {/* Faint vertical divider, inset from top & bottom */}
                 <div className="self-stretch flex items-center">
-                  <div className="w-px h-5 bg-white/20 rounded-full" />
+                  <div className="w-px h-5 bg-white/20 " />
                 </div>
 
                 {/* Right zone: copy — completely isolated, never triggers address hover */}
@@ -136,7 +136,7 @@ export function TopNav() {
             ) : (
               <Button
                 onClick={connectWallet}
-                className="h-10 rounded-xl bg-[#1f1f1f] hover:bg-black font-semibold text-white px-5 shadow-lg shadow-black/10 hover:shadow-xl hover:shadow-black/20 hover:scale-105 active:scale-95 transition-all duration-300"
+                className="h-10 bg-blue-600 hover:bg-blue-500 font-semibold text-white px-5 shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-105 active:scale-95 transition-all duration-300"
                 disabled={connecting}
               >
                 {connecting ? (

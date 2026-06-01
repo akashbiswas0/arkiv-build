@@ -49,38 +49,38 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --background: oklch(0.12 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.16 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.16 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.623 0.214 259.8);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
+  --secondary: oklch(0.22 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.22 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.623 0.214 259.8);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.623 0.214 259.8);
+  --chart-1: oklch(0.623 0.214 259.8);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar: oklch(0.16 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.623 0.214 259.8);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar-accent: oklch(0.22 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.623 0.214 259.8);
 }
 
 .dark {
@@ -145,9 +145,9 @@
   .schema-flow .react-flow__controls-button {
     width: 28px;
     height: 28px;
-    border-color: color-mix(in oklab, var(--border) 40%, transparent);
-    background: color-mix(in oklab, white 35%, transparent);
-    color: color-mix(in oklab, var(--foreground) 60%, transparent);
+    border-color: color-mix(in oklab, var(--border) 60%, transparent);
+    background: color-mix(in oklab, black 45%, transparent);
+    color: color-mix(in oklab, var(--foreground) 70%, transparent);
     backdrop-filter: blur(8px);
   }
 
@@ -159,27 +159,27 @@
   }
 
   .schema-flow .react-flow__controls-button:hover {
-    background: color-mix(in oklab, white 60%, transparent);
+    background: color-mix(in oklab, black 65%, transparent);
   }
 
   .schema-flow .react-flow__edge-path {
-    stroke: #ff7a45;
+    stroke: #3b82f6;
     stroke-width: 2.5;
-    filter: drop-shadow(0 0 4px rgba(255, 122, 69, 0.55));
+    filter: drop-shadow(0 0 4px rgba(59, 130, 246, 0.55));
     opacity: 0.92;
   }
 
   .schema-flow .react-flow__edge:hover .react-flow__edge-path {
-    stroke: #ff5722;
+    stroke: #2563eb;
     stroke-width: 3;
-    filter: drop-shadow(0 0 8px rgba(255, 87, 34, 0.75));
+    filter: drop-shadow(0 0 8px rgba(37, 99, 235, 0.75));
     opacity: 1;
   }
 
   .schema-flow .react-flow__edge.selected .react-flow__edge-path {
-    stroke: #ff5722;
+    stroke: #2563eb;
     stroke-width: 3;
-    filter: drop-shadow(0 0 8px rgba(255, 87, 34, 0.75));
+    filter: drop-shadow(0 0 8px rgba(37, 99, 235, 0.75));
     opacity: 1;
   }
 
@@ -191,12 +191,12 @@
 
   /* Make the SVG marker arrowheads inherit edge color */
   .schema-flow .react-flow__arrowhead path {
-    fill: #ff7a45;
+    fill: #3b82f6;
   }
 
   .schema-flow .react-flow__connection-path {
-    stroke: #ff7a45;
+    stroke: #3b82f6;
     stroke-width: 2.5;
-    filter: drop-shadow(0 0 4px rgba(255, 122, 69, 0.5));
+    filter: drop-shadow(0 0 4px rgba(59, 130, 246, 0.5));
   }
 }

@@ -35,7 +35,7 @@ export function EntityActions({
     return (
       <div className="flex flex-col gap-3">
         {hasPendingParent && (
-          <div className="w-full rounded-[14px] border border-amber-200 bg-amber-50 px-4 py-3 text-xs font-mono uppercase tracking-widest text-amber-700 text-center">
+          <div className="w-full border border-amber-200 bg-amber-50 px-4 py-3 text-xs font-mono uppercase tracking-widest text-amber-700 text-center">
             Deploy parent relations first
           </div>
         )}
@@ -50,7 +50,7 @@ export function EntityActions({
             checkingProjectCollision ||
             hasPendingParent
           }
-          className="nodrag nopan h-14 w-full rounded-[14px] bg-[#1a1a1a] shadow-lg shadow-black/10 text-white font-mono tracking-widest uppercase text-xs transition-all duration-300 hover:bg-[#333] hover:shadow-xl hover:shadow-black/20 hover:-translate-y-1 active:scale-[0.98] disabled:hover:translate-y-0 disabled:hover:scale-100"
+          className="nodrag nopan h-14 w-full bg-[#2563eb] shadow-lg shadow-black/10 text-white font-mono tracking-widest uppercase text-xs transition-all duration-300 hover:bg-[#1d4ed8] hover:shadow-xl hover:shadow-black/20 hover:-translate-y-1 active:scale-[0.98] disabled:hover:translate-y-0 disabled:hover:scale-100"
         >
           {checkingProjectCollision ? (
             <>
@@ -94,10 +94,10 @@ export function EntityActions({
       onClick={onUpdate}
       disabled={updating}
       className={[
-        'nodrag nopan h-14 w-full rounded-[14px] shadow-lg text-white font-mono tracking-widest uppercase text-xs transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98] disabled:hover:translate-y-0 disabled:hover:scale-100',
+        'nodrag nopan h-14 w-full shadow-lg text-white font-mono tracking-widest uppercase text-xs transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98] disabled:hover:translate-y-0 disabled:hover:scale-100',
         updateSuccess
-          ? 'bg-[#1a1a1a] hover:bg-[#333] shadow-black/10'
-          : 'bg-[#ff7a45] hover:bg-[#ff692a] shadow-orange-500/30',
+          ? 'bg-[#2563eb] hover:bg-[#1d4ed8] shadow-black/10'
+          : 'bg-[#3b82f6] hover:bg-[#2563eb] shadow-blue-500/30',
       ].join(' ')}
     >
       {updating ? (

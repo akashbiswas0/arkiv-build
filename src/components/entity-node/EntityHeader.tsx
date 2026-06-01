@@ -28,13 +28,13 @@ export function EntityHeader({
   const updateEntityName = useSchemaStore((s) => s.updateEntityName)
   const removeNode = useSchemaStore((s) => s.removeNode)
   const updateExpirationDuration = useSchemaStore((s) => s.updateExpirationDuration)
-  const accentColor = data.isExternalCreator ? 'bg-rose-500' : 'bg-[#ff7a45]'
+  const accentColor = data.isExternalCreator ? 'bg-rose-500' : 'bg-[#3b82f6]'
 
   return (
     <div className="p-7 pb-5">
       <div className="flex items-center justify-between gap-4">
         <div className="flex flex-1 items-center gap-4">
-          <div className={`flex size-14 shrink-0 items-center justify-center rounded-[16px] ${accentColor} text-white`}>
+          <div className={`flex size-14 shrink-0 items-center justify-center ${accentColor} text-white`}>
             <Database className="size-6" />
           </div>
           <input
@@ -44,7 +44,7 @@ export function EntityHeader({
             }
             size={Math.max(data.label.length || 0, 12)}
             style={{ fieldSizing: 'content' } as CSSProperties}
-            className="nodrag nopan h-10 min-w-0 border-transparent bg-transparent text-[22px] font-bold uppercase tracking-wider text-gray-900 outline-none placeholder:text-gray-300"
+            className="nodrag nopan h-10 min-w-0 border-transparent bg-transparent text-[22px] font-bold uppercase tracking-wider text-white outline-none placeholder:text-gray-600"
             placeholder="ENTITY"
             disabled={!isDraft}
           />
@@ -59,7 +59,7 @@ export function EntityHeader({
                   onChange={(e) =>
                     updateExpirationDuration(nodeId, e.target.value as ExpirationDuration)
                   }
-                  className="nodrag nopan bg-transparent text-sm font-mono text-gray-500 underline underline-offset-4 decoration-gray-300 outline-none cursor-pointer hover:text-gray-700 appearance-none pr-5 relative z-10"
+                  className="nodrag nopan bg-transparent text-sm font-mono text-gray-400 underline underline-offset-4 decoration-gray-300 outline-none cursor-pointer hover:text-gray-300 appearance-none pr-5 relative z-10"
                 >
                   {EXPIRATION_DURATION_OPTIONS.map((option) => (
                     <option key={option} value={option}>
@@ -67,10 +67,10 @@ export function EntityHeader({
                     </option>
                   ))}
                 </select>
-                <ChevronDown className="absolute right-0 top-1/2 -translate-y-1/2 size-3.5 text-gray-400 pointer-events-none" />
+                <ChevronDown className="absolute right-0 top-1/2 -translate-y-1/2 size-3.5 text-gray-500 pointer-events-none" />
               </div>
             ) : (
-              <span className="text-sm font-mono text-gray-500 underline underline-offset-4 decoration-gray-300">
+              <span className="text-sm font-mono text-gray-400 underline underline-offset-4 decoration-gray-300">
                 EXP: {getDurationLabel(data.expirationDuration)}
               </span>
             )}
@@ -88,7 +88,7 @@ export function EntityHeader({
 
           <button
             onClick={() => removeNode(nodeId)}
-            className="nodrag nopan flex size-8 shrink-0 items-center justify-center rounded-lg text-gray-400 transition hover:bg-gray-100 hover:text-gray-900"
+            className="nodrag nopan flex size-8 shrink-0 items-center justify-center text-gray-500 transition hover:bg-white/10 hover:text-white"
             title="Remove Entity"
           >
             <X className="size-5" />

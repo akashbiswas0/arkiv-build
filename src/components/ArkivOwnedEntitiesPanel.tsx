@@ -67,8 +67,8 @@ type EntityCardProps = {
 function EntityCard({ entity, onLoad, disabled, showProjectAttribute = true, variant = "default" }: EntityCardProps) {
   const containerClass =
     variant === "project"
-      ? "group flex w-full items-start justify-between gap-3 rounded-xl border border-orange-200/70 bg-orange-50/50 px-4 py-4 text-left shadow-sm ring-1 ring-orange-100/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-500/10 hover:ring-[#ff7a45] hover:border-transparent active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
-      : "group flex w-full items-start justify-between gap-3 rounded-xl border border-gray-200 bg-white px-4 py-4 text-left shadow-sm ring-1 ring-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-500/10 hover:ring-[#ff7a45] hover:border-transparent active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
+      ? "group flex w-full items-start justify-between gap-3 border border-blue-800/70 bg-blue-950/50 px-4 py-4 text-left shadow-sm ring-1 ring-blue-900/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/10 hover:ring-[#3b82f6] hover:border-transparent active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
+      : "group flex w-full items-start justify-between gap-3 border border-white/10 bg-[#141414] px-4 py-4 text-left shadow-sm ring-1 ring-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/10 hover:ring-[#3b82f6] hover:border-transparent active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
 
   return (
     <button
@@ -83,18 +83,18 @@ function EntityCard({ entity, onLoad, disabled, showProjectAttribute = true, var
           return (
             <div className="min-w-0">
               {parsed.address ? (
-                <p className="truncate font-mono text-[11px] text-gray-400">{parsed.address}</p>
+                <p className="truncate font-mono text-[11px] text-gray-500">{parsed.address}</p>
               ) : null}
-              <p className="truncate text-base font-bold text-gray-900">{parsed.name}</p>
+              <p className="truncate text-base font-bold text-white">{parsed.name}</p>
             </div>
           )
         })() : (
-          <p className="truncate text-sm font-bold text-gray-900">{entity.label}</p>
+          <p className="truncate text-sm font-bold text-white">{entity.label}</p>
         )}
-        <p className="mt-1 text-xs text-gray-600">{entity.preview}</p>
-        <p className="mt-1 font-mono text-[11px] text-gray-500">{shortKey(entity.key)}</p>
+        <p className="mt-1 text-xs text-gray-400">{entity.preview}</p>
+        <p className="mt-1 font-mono text-[11px] text-gray-400">{shortKey(entity.key)}</p>
         {entity.createdAtBlock ? (
-          <p className="mt-1 text-[12px] text-gray-400">
+          <p className="mt-1 text-[12px] text-gray-500">
             Created at block {entity.createdAtBlock}
           </p>
         ) : null}
@@ -130,7 +130,7 @@ function StackedGroup({ projectAttributeValue, entities, onLoad, disabled }: Sta
           <div
             key={index}
             aria-hidden
-            className="pointer-events-none absolute rounded-xl border border-gray-200 bg-white shadow-sm"
+            className="pointer-events-none absolute border border-white/10 bg-[#141414] shadow-sm"
             style={{
               top: `${offset}px`,
               left: `${inset}px`,
@@ -146,29 +146,29 @@ function StackedGroup({ projectAttributeValue, entities, onLoad, disabled }: Sta
         type="button"
         onClick={() => onLoad(projectAttributeValue)}
         disabled={disabled}
-        className="group relative flex w-full items-start justify-between gap-3 rounded-xl border border-gray-200 bg-white px-4 py-4 text-left shadow-sm ring-1 ring-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-500/10 hover:ring-[#ff7a45] hover:border-transparent active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
+        className="group relative flex w-full items-start justify-between gap-3 border border-white/10 bg-[#141414] px-4 py-4 text-left shadow-sm ring-1 ring-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/10 hover:ring-[#3b82f6] hover:border-transparent active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
       >
         <div className="min-w-0 flex-1">
           <div className="flex items-start justify-between gap-2">
             <div className="min-w-0">
               {parsed.address ? (
-                <p className="truncate font-mono text-[11px] text-gray-400">{parsed.address}</p>
+                <p className="truncate font-mono text-[11px] text-gray-500">{parsed.address}</p>
               ) : null}
-              <p className="truncate text-base font-bold text-gray-900">{parsed.name}</p>
+              <p className="truncate text-base font-bold text-white">{parsed.name}</p>
             </div>
-            <span className="mt-0.5 inline-flex shrink-0 items-center gap-1 rounded-full bg-[#ff7a45]/10 px-2 py-0.5 font-mono text-[10px] font-bold text-[#ff7a45]">
+            <span className="mt-0.5 inline-flex shrink-0 items-center gap-1 bg-[#3b82f6]/10 px-2 py-0.5 font-mono text-[10px] font-bold text-[#3b82f6]">
               <Layers className="size-3" />
               {count}
             </span>
           </div>
-          <p className="mt-1 text-xs text-gray-600">{top.preview}</p>
-          <p className="mt-1 text-[12px] text-gray-500">
+          <p className="mt-1 text-xs text-gray-400">{top.preview}</p>
+          <p className="mt-1 text-[12px] text-gray-400">
             {count} entities share this project
           </p>
-          <p className="mt-1 text-[12px] text-gray-400">Click to load project graph</p>
+          <p className="mt-1 text-[12px] text-gray-500">Click to load project graph</p>
         </div>
 
-        <div className="rounded-lg border border-gray-100 bg-gray-50 p-2 text-gray-400 transition-all duration-300 group-hover:border-transparent group-hover:bg-[#ff7a45] group-hover:text-white">
+        <div className="border border-white/10 bg-white/5 p-2 text-gray-500 transition-all duration-300 group-hover:border-transparent group-hover:bg-[#3b82f6] group-hover:text-white">
           <Layers className="size-3.5" />
         </div>
       </button>
@@ -209,13 +209,13 @@ export function ArkivOwnedEntitiesPanel() {
   }, [renderItems])
 
   return (
-    <div className="flex w-[24rem] min-h-0 flex-1 flex-col rounded-[16px] border border-gray-200 bg-white/80 backdrop-blur-xl p-5 shadow-2xl shadow-gray-200/50">
+    <div className="flex w-[24rem] min-h-0 flex-1 flex-col border border-white/10 bg-[#141414]/80 backdrop-blur-xl p-5 shadow-2xl shadow-gray-200/50">
       <div className="flex shrink-0 items-center justify-between gap-3">
         <div>
-          <p className="text-xs font-bold uppercase tracking-wider text-gray-500 font-mono">
+          <p className="text-xs font-bold uppercase tracking-wider text-gray-400 font-mono">
             Wallet-Owned Entities
           </p>
-          <p className="mt-1 text-sm text-gray-700">
+          <p className="mt-1 text-sm text-gray-300">
             Load entities owned by the connected wallet
           </p>
         </div>
@@ -223,7 +223,7 @@ export function ArkivOwnedEntitiesPanel() {
         <Button
           variant="outline"
           size="icon-sm"
-          className="rounded-xl border-gray-200 shadow-sm transition-all duration-300 hover:rotate-180 hover:bg-gray-100 hover:shadow-md"
+          className="border-white/10 shadow-sm transition-all duration-300 hover:rotate-180 hover:bg-white/10 hover:shadow-md"
           onClick={refreshOwnedEntities}
           disabled={!account || loadingOwnedEntities}
         >
@@ -231,31 +231,31 @@ export function ArkivOwnedEntitiesPanel() {
         </Button>
       </div>
 
-      <div className="mt-4 flex min-h-0 flex-1 flex-col rounded-[12px] border border-gray-200 bg-gray-50/50 p-3">
+      <div className="mt-4 flex min-h-0 flex-1 flex-col border border-white/10 bg-white/5 p-3">
         {!walletAvailable ? (
-          <div className="flex items-start gap-3 text-sm text-gray-600">
-            <Wallet className="mt-0.5 size-4 text-gray-400" />
+          <div className="flex items-start gap-3 text-sm text-gray-400">
+            <Wallet className="mt-0.5 size-4 text-gray-500" />
             MetaMask is required to browse wallet-owned Arkiv entities.
           </div>
         ) : !account ? (
-          <div className="flex items-start gap-3 text-sm text-gray-600">
-            <Wallet className="mt-0.5 size-4 text-gray-400" />
+          <div className="flex items-start gap-3 text-sm text-gray-400">
+            <Wallet className="mt-0.5 size-4 text-gray-500" />
             Connect your wallet to fetch entities already deployed on Arkiv Braga.
           </div>
         ) : loadingOwnedEntities ? (
-          <div className="flex items-center gap-2 text-sm text-gray-600">
+          <div className="flex items-center gap-2 text-sm text-gray-400">
             <LoaderCircle className="size-4 animate-spin" />
             Loading entities from Braga...
           </div>
         ) : ownedEntities.length === 0 ? (
-          <p className="shrink-0 text-sm text-gray-600">
+          <p className="shrink-0 text-sm text-gray-400">
             No wallet-owned entities were found on Arkiv Braga yet.
           </p>
         ) : (
           <div className="flex-1 space-y-4 overflow-y-auto px-1 pt-2 pb-2">
             {projectItems.length > 0 ? (
               <div className="space-y-2">
-                <p className="px-1 text-[10px] font-bold uppercase tracking-wider text-[#ff7a45] font-mono">
+                <p className="px-1 text-[10px] font-bold uppercase tracking-wider text-[#3b82f6] font-mono">
                   With project attribute
                 </p>
                 {projectItems.map((item) =>
@@ -281,12 +281,12 @@ export function ArkivOwnedEntitiesPanel() {
             ) : null}
 
             {projectItems.length > 0 && otherItems.length > 0 ? (
-              <div className="border-t border-dashed border-gray-200" />
+              <div className="border-t border-dashed border-white/10" />
             ) : null}
 
             {otherItems.length > 0 ? (
               <div className="space-y-2">
-                <p className="px-1 text-[10px] font-bold uppercase tracking-wider text-gray-500 font-mono">
+                <p className="px-1 text-[10px] font-bold uppercase tracking-wider text-gray-400 font-mono">
                   Without project attribute
                 </p>
                 {otherItems.map((item) =>

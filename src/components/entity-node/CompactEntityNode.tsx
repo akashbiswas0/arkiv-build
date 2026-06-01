@@ -33,14 +33,14 @@ export function CompactEntityNode({
         expandText: 'text-rose-600',
       }
     : {
-        handle: '!bg-[#ff7a45]',
-        selected: 'border-[2px] border-[#ff7a45] shadow-xl shadow-orange-500/20 ring-[5px] ring-[#ff7a45]/15',
-        idle: 'border border-gray-200 shadow-lg shadow-gray-300/30 hover:shadow-xl hover:shadow-gray-300/45',
-        icon: ['bg-[#ff7a45]/80', 'bg-[#ff7a45]/70', 'bg-[#ff7a45]/65', 'bg-[#ff7a45]/55'],
-        relation: 'border-[#ffd3bd] bg-[#fff8f4] text-[#ff7a45]',
-        relationButton: 'border-[#ffc6ad] text-[#ff7a45] hover:border-red-200 hover:text-red-600',
-        expand: 'border-[#ffbe9f] bg-[#fff5f0] hover:border-[#ff7a45] hover:bg-[#ffe8db]',
-        expandText: 'text-[#ff7a45]',
+        handle: '!bg-[#3b82f6]',
+        selected: 'border-[2px] border-[#3b82f6] shadow-xl shadow-blue-500/20 ring-[5px] ring-[#3b82f6]/15',
+        idle: 'border border-white/10 shadow-lg shadow-gray-300/30 hover:shadow-xl hover:shadow-gray-300/45',
+        icon: ['bg-[#3b82f6]/80', 'bg-[#3b82f6]/70', 'bg-[#3b82f6]/65', 'bg-[#3b82f6]/55'],
+        relation: 'border-[#1e3a5f] bg-[#13213d] text-[#3b82f6]',
+        relationButton: 'border-[#1e3a5f] text-[#3b82f6] hover:border-red-200 hover:text-red-600',
+        expand: 'border-[#1e3a5f] bg-[#13213d] hover:border-[#3b82f6] hover:bg-[#1a2c4d]',
+        expandText: 'text-[#3b82f6]',
       }
 
   return (
@@ -53,7 +53,7 @@ export function CompactEntityNode({
 
       <div
         className={[
-          'overflow-hidden rounded-[20px] bg-white/95 backdrop-blur-xl transition-all duration-300 ease-out',
+          'overflow-hidden bg-[#141414]/95 backdrop-blur-xl transition-all duration-300 ease-out',
           selected ? accent.selected : accent.idle,
         ].join(' ')}
       >
@@ -62,19 +62,19 @@ export function CompactEntityNode({
             <div className="flex min-w-0 flex-1 items-start gap-3">
               <div className="mt-1 grid shrink-0 grid-cols-2 gap-1">
                 {accent.icon.map((className) => (
-                  <span key={className} className={`size-2.5 rounded-[4px] ${className}`} />
+                  <span key={className} className={`size-2.5 ${className}`} />
                 ))}
               </div>
 
               <div className="min-w-0">
-                <p className="text-[10px] font-mono font-bold uppercase tracking-widest text-gray-400">
+                <p className="text-[10px] font-mono font-bold uppercase tracking-widest text-gray-500">
                   Entity
                 </p>
-                <p className="whitespace-nowrap pt-0.5 text-[14px] font-bold uppercase tracking-wide text-gray-900">
+                <p className="whitespace-nowrap pt-0.5 text-[14px] font-bold uppercase tracking-wide text-white">
                   {data.label || 'Untitled Entity'}
                 </p>
                 {data.entityKey ? (
-                  <p className="truncate pt-1 font-mono text-[11px] text-gray-500">
+                  <p className="truncate pt-1 font-mono text-[11px] text-gray-400">
                     {data.entityKey}
                   </p>
                 ) : null}
@@ -83,7 +83,7 @@ export function CompactEntityNode({
 
             <button
               onClick={() => removeNode(id)}
-              className="nodrag nopan flex size-8 shrink-0 items-center justify-center rounded-lg text-gray-400 transition hover:bg-gray-100 hover:text-gray-900"
+              className="nodrag nopan flex size-8 shrink-0 items-center justify-center text-gray-500 transition hover:bg-white/10 hover:text-white"
               title="Remove Entity"
             >
               <X className="size-4" />
@@ -92,14 +92,14 @@ export function CompactEntityNode({
 
           {relationFields.length > 0 ? (
             <div className="space-y-2">
-              <p className="font-mono text-[10px] font-bold uppercase tracking-widest text-gray-400">
+              <p className="font-mono text-[10px] font-bold uppercase tracking-widest text-gray-500">
                 Relations
               </p>
               <div className="flex flex-wrap gap-2">
                 {relationFields.map((field) => (
                   <div
                     key={field.id}
-                    className={`nodrag nopan flex max-w-full items-center gap-1.5 rounded-full border py-1 pl-2.5 pr-1 ${accent.relation}`}
+                    className={`nodrag nopan flex max-w-full items-center gap-1.5 border py-1 pl-2.5 pr-1 ${accent.relation}`}
                   >
                     <Link className="size-3.5 shrink-0" />
                     <span className="max-w-36 truncate font-mono text-[10px] font-bold tracking-wide">
@@ -122,7 +122,7 @@ export function CompactEntityNode({
 
           <button
             onClick={onExpand}
-            className={`nodrag nopan flex h-10 w-full items-center justify-between rounded-[12px] border px-3 text-left transition ${accent.expand}`}
+            className={`nodrag nopan flex h-10 w-full items-center justify-between border px-3 text-left transition ${accent.expand}`}
           >
             <span className={`font-mono text-[11px] font-bold uppercase tracking-widest ${accent.expandText}`}>
               Expand Attributes

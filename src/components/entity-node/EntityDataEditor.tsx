@@ -48,7 +48,7 @@ export function EntityDataEditor({
 
           return (
             <div key={key}>
-              <p className="mb-2 text-[12px] font-mono font-bold uppercase tracking-widest text-gray-400">
+              <p className="mb-2 text-[12px] font-mono font-bold uppercase tracking-widest text-gray-500">
                 {key}
               </p>
               <input
@@ -70,7 +70,7 @@ export function EntityDataEditor({
       value={entityData}
       onChange={(e) => updateEntityData(nodeId, e.target.value)}
       rows={6}
-      className="nodrag nopan w-full resize-none rounded-xl border border-gray-100 bg-gray-50/50 p-4 font-mono text-sm leading-5 text-gray-900 outline-none transition focus:border-gray-200 focus:bg-gray-100/50"
+      className="nodrag nopan w-full resize-none border border-white/10 bg-white/5 p-4 font-mono text-sm leading-5 text-white outline-none transition focus:border-white/10 focus:bg-white/10"
       placeholder="Entity payload (JSON or plain text)"
       spellCheck={false}
     />

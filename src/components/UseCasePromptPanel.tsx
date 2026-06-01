@@ -645,17 +645,17 @@ export function UseCasePromptPanel({
     (!hasDraftEntities && !hasSeedValues)
 
   return (
-    <section className="flex h-full min-h-0 w-full flex-col overflow-hidden rounded-[24px] border border-[#ffd8c3]/80 bg-white/95 backdrop-blur-md">
-      <div className="shrink-0 border-b border-[#ffe0d1] bg-white/95 px-4 py-3">
+    <section className="flex h-full min-h-0 w-full flex-col overflow-hidden border border-[#1e3a5f]/80 bg-[#141414]/95 backdrop-blur-md">
+      <div className="shrink-0 border-b border-[#1e3a5f] bg-[#141414]/95 px-4 py-3">
         <div className="flex flex-wrap items-center gap-2">
-          <div className="flex size-8 items-center justify-center rounded-[10px] bg-[#fff0e8] text-[#ff7a45]">
+          <div className="flex size-8 items-center justify-center bg-[#13213d] text-[#3b82f6]">
             <Wand2 className="size-4" />
           </div>
           <div className="min-w-[10rem] flex-1">
-            <h2 className="truncate text-sm font-bold text-gray-950">
+            <h2 className="truncate text-sm font-bold text-white">
               Arkiv Build Agent
             </h2>
-            <p className="truncate text-xs text-gray-500">
+            <p className="truncate text-xs text-gray-400">
               Discuss, build, prompt
             </p>
           </div>
@@ -665,7 +665,7 @@ export function UseCasePromptPanel({
             size="sm"
             onClick={handleSeedDeployAction}
             disabled={isSeedDeployButtonDisabled}
-            className="flex h-8 items-center gap-1.5 rounded-[10px] border border-[#ffc4a6] bg-[#fff8f4] px-2.5 text-xs font-bold text-[#ff7a45] shadow-sm transition hover:bg-[#fff0e8] disabled:opacity-40"
+            className="flex h-8 items-center gap-1.5 border border-[#1e3a5f] bg-[#13213d] px-2.5 text-xs font-bold text-[#3b82f6] shadow-sm transition hover:bg-[#13213d] disabled:opacity-40"
           >
             {isSeedDeployActionBusy ? (
               <Loader2 className="size-3.5 animate-spin" />
@@ -684,7 +684,7 @@ export function UseCasePromptPanel({
             size="sm"
             onClick={handleOpenExportTargetChooser}
             disabled={isLoading}
-            className="flex h-8 items-center gap-1.5 rounded-[10px] border border-[#ffc4a6] bg-[#fff8f4] px-2.5 text-xs font-bold text-[#ff7a45] shadow-sm transition hover:bg-[#fff0e8] disabled:opacity-40"
+            className="flex h-8 items-center gap-1.5 border border-[#1e3a5f] bg-[#13213d] px-2.5 text-xs font-bold text-[#3b82f6] shadow-sm transition hover:bg-[#13213d] disabled:opacity-40"
           >
             {loadingMode === 'generateImplementationPlan' ? (
               <Loader2 className="size-3.5 animate-spin" />
@@ -699,7 +699,7 @@ export function UseCasePromptPanel({
               variant="outline"
               size="sm"
               onClick={handleCopyPlan}
-              className="flex h-8 items-center gap-1.5 rounded-[10px] border border-[#ffc4a6] bg-white px-2.5 text-xs font-bold text-[#ff7a45] shadow-sm transition hover:bg-[#fff0e8] disabled:opacity-40"
+              className="flex h-8 items-center gap-1.5 border border-[#1e3a5f] bg-[#141414] px-2.5 text-xs font-bold text-[#3b82f6] shadow-sm transition hover:bg-[#13213d] disabled:opacity-40"
             >
               {hasCopiedPlan ? (
                 <Check className="size-3.5" />
@@ -717,7 +717,7 @@ export function UseCasePromptPanel({
               onClick={handleCopyThread}
               disabled={!canCopyThread}
               title="Copy full thread JSON"
-              className="flex h-8 items-center gap-1.5 rounded-[10px] border border-[#ffc4a6] bg-[#fff8f4] px-2.5 text-xs font-bold text-[#ff7a45] shadow-sm transition hover:bg-[#fff0e8] disabled:opacity-40"
+              className="flex h-8 items-center gap-1.5 border border-[#1e3a5f] bg-[#13213d] px-2.5 text-xs font-bold text-[#3b82f6] shadow-sm transition hover:bg-[#13213d] disabled:opacity-40"
             >
               <Clipboard className="size-3.5" />
               Copy Thread
@@ -730,7 +730,7 @@ export function UseCasePromptPanel({
             onClick={handleClearChat}
             disabled={!canClearChat}
             title="Clear chat"
-            className="flex h-8 items-center gap-1.5 rounded-[10px] border border-[#ffb3ad] bg-[#fff0ee] px-2.5 text-xs font-bold text-[#ff3b30] shadow-sm transition hover:bg-[#ffe1de] hover:text-red-600 disabled:opacity-40"
+            className="flex h-8 items-center gap-1.5 border border-[#5f1e1e] bg-[#2e1416] px-2.5 text-xs font-bold text-[#ff3b30] shadow-sm transition hover:bg-[#3a1a1c] hover:text-red-600 disabled:opacity-40"
           >
             <Trash2 className="size-3.5" />
             Clear
@@ -740,7 +740,7 @@ export function UseCasePromptPanel({
             variant="outline"
             size="sm"
             onClick={onClose}
-            className="flex h-8 items-center gap-1.5 rounded-[10px] border border-gray-200 bg-white px-2.5 text-xs font-bold text-gray-600 shadow-sm transition hover:bg-gray-50 hover:text-gray-800"
+            className="flex h-8 items-center gap-1.5 border border-white/10 bg-[#141414] px-2.5 text-xs font-bold text-gray-400 shadow-sm transition hover:bg-white/5 hover:text-gray-200"
           >
             <X className="size-3.5" />
             Close
@@ -748,14 +748,14 @@ export function UseCasePromptPanel({
         </div>
       </div>
 
-      <div className="min-h-0 flex-1 overflow-y-auto bg-[#fbfbfc] px-4 py-4">
+      <div className="min-h-0 flex-1 overflow-y-auto bg-[#0f0f0f] px-4 py-4">
         {messages.length === 0 ? (
-          <div className="rounded-[18px] border border-dashed border-[#ffd4bf] bg-white px-4 py-4 text-sm leading-6 text-gray-600 shadow-[0_1px_2px_rgba(15,23,42,0.03)]">
-            <p className="font-semibold text-gray-900">Start with the shape of the app.</p>
+          <div className="border border-dashed border-[#1e3a5f] bg-[#141414] px-4 py-4 text-sm leading-6 text-gray-400 shadow-[0_1px_2px_rgba(15,23,42,0.03)]">
+            <p className="font-semibold text-white">Start with the shape of the app.</p>
             <p className="mt-1">
               Describe what users create, read, or update. Arkiv will ask only for the missing pieces before building the data model.
             </p>
-            <p className="mt-3 rounded-[14px] border border-[#ffe1cf] bg-[#fff8f4] px-3 py-2 text-xs leading-5 text-[#9a4b22]">
+            <p className="mt-3 border border-[#1e3a5f] bg-[#13213d] px-3 py-2 text-xs leading-5 text-[#93c5fd]">
               Beta notice: chat messages and undeployed model updates are not saved yet and may be lost. Keep your changes deployed if you want them to persist.
             </p>
           </div>
@@ -790,17 +790,17 @@ export function UseCasePromptPanel({
               >
                 <p
                   className={`px-1 text-[11px] font-semibold uppercase ${
-                    message.role === 'user' ? 'text-[#d95018]' : 'text-gray-500'
+                    message.role === 'user' ? 'text-[#60a5fa]' : 'text-gray-400'
                   }`}
                 >
                   {message.role === 'user' ? 'You' : 'Arkiv'}
                 </p>
                 {message.role === 'assistant' ? (
-                  <div className="w-full rounded-[18px] border border-gray-200 bg-white px-4 py-3 text-gray-700 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
+                  <div className="w-full border border-white/10 bg-[#141414] px-4 py-3 text-gray-300 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
                     <MarkdownMessage content={message.content} />
                   </div>
                 ) : (
-                  <div className="max-w-[34rem] rounded-[18px] bg-[#ff7a45] px-4 py-3 text-sm leading-6 text-white shadow-[0_6px_18px_rgba(255,122,69,0.2)]">
+                  <div className="max-w-[34rem] bg-[#3b82f6] px-4 py-3 text-sm leading-6 text-white shadow-[0_6px_18px_rgba(59, 130, 246,0.2)]">
                     <p className="whitespace-pre-wrap break-words">{message.content}</p>
                   </div>
                 )}
@@ -821,7 +821,7 @@ export function UseCasePromptPanel({
             )
           })}
           {loadingMode ? (
-            <div className="mr-auto flex max-w-[46rem] items-center gap-2 rounded-[18px] border border-gray-200 bg-white px-4 py-3 text-sm text-gray-500 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
+            <div className="mr-auto flex max-w-[46rem] items-center gap-2 border border-white/10 bg-[#141414] px-4 py-3 text-sm text-gray-400 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
               <Loader2 className="size-3.5 animate-spin" />
               {loadingLabels[loadingMode]}
             </div>
@@ -830,11 +830,11 @@ export function UseCasePromptPanel({
         </div>
 
         {plan ? (
-          <div className="mt-4 overflow-hidden rounded-[18px] border border-[#ffd4bf] bg-white shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
-            <div className="flex items-center justify-between border-b border-[#ffe0d1] px-3 py-2">
+          <div className="mt-4 overflow-hidden border border-[#1e3a5f] bg-[#141414] shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
+            <div className="flex items-center justify-between border-b border-[#1e3a5f] px-3 py-2">
               <div className="min-w-0">
-                <p className="text-xs font-bold text-gray-800">Implementation prompt</p>
-                <p className="text-[11px] text-gray-500">
+                <p className="text-xs font-bold text-gray-200">Implementation prompt</p>
+                <p className="text-[11px] text-gray-400">
                   Target: {EXPORT_TARGET_LABELS[selectedExportTarget]}
                 </p>
               </div>
@@ -843,7 +843,7 @@ export function UseCasePromptPanel({
                 variant="ghost"
                 size="sm"
                 onClick={handleCopyPlan}
-                className="flex h-7 items-center gap-1.5 rounded-[10px] px-2 text-xs text-[#ff7a45] hover:bg-[#fff0e8] hover:text-[#e66a39]"
+                className="flex h-7 items-center gap-1.5 px-2 text-xs text-[#3b82f6] hover:bg-[#13213d] hover:text-[#60a5fa]"
               >
                 {hasCopiedPlan ? (
                   <Check className="size-3.5" />
@@ -860,9 +860,9 @@ export function UseCasePromptPanel({
         ) : null}
       </div>
 
-      <div className="shrink-0 border-t border-gray-200/70 bg-white p-3">
+      <div className="shrink-0 border-t border-white/10 bg-[#141414] p-3">
         {error ? (
-          <p className="mb-2 rounded-xl border border-rose-200 bg-rose-50 px-3 py-2 text-xs text-rose-700">
+          <p className="mb-2 border border-rose-200 bg-rose-50 px-3 py-2 text-xs text-rose-700">
             {error}
           </p>
         ) : null}
@@ -873,7 +873,7 @@ export function UseCasePromptPanel({
             value={input}
             onChange={(event) => setInput(event.target.value)}
             rows={1}
-            className="max-h-36 min-h-14 w-full resize-none overflow-y-auto rounded-[18px] border border-gray-200 bg-white py-4 pl-4 pr-16 text-sm leading-6 text-gray-800 outline-none transition placeholder:text-gray-400 focus:border-[#ffc4a6] focus:ring-4 focus:ring-[#fff0e8]"
+            className="max-h-36 min-h-14 w-full resize-none overflow-y-auto border border-white/10 bg-[#141414] py-4 pl-4 pr-16 text-sm leading-6 text-gray-200 outline-none transition placeholder:text-gray-500 focus:border-[#1e3a5f] focus:ring-4 focus:ring-[#13213d]"
             placeholder={
               hasExistingModel
                 ? 'Ask for a schema change, new entity, or relationship...'
@@ -892,7 +892,7 @@ export function UseCasePromptPanel({
             type="button"
             onClick={handleSend}
             disabled={isLoading}
-            className="absolute bottom-3 right-3 flex size-10 items-center justify-center rounded-full bg-[#f2f4f7] text-gray-500 transition hover:bg-[#ffefe5] hover:text-[#ff7a45] disabled:opacity-40"
+            className="absolute bottom-3 right-3 flex size-10 items-center justify-center bg-[#1c1c1c] text-gray-400 transition hover:bg-[#1a2c4d] hover:text-[#3b82f6] disabled:opacity-40"
           >
             {isLoading ? (
               <Loader2 className="size-4 animate-spin" />
@@ -914,15 +914,15 @@ export function UseCasePromptPanel({
             type="button"
             aria-label="Close export target chooser"
             onClick={() => setIsExportTargetChooserOpen(false)}
-            className="absolute inset-0 cursor-default bg-gray-950/20 backdrop-blur-[2px]"
+            className="absolute inset-0 cursor-default bg-black/60 backdrop-blur-[2px]"
           />
 
-          <div className="relative w-[min(28rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-[#ffd8c3] bg-white/95 p-6 shadow-2xl backdrop-blur-xl animate-in fade-in zoom-in-95 duration-200">
+          <div className="relative w-[min(28rem,calc(100vw-2rem))] overflow-hidden border border-[#1e3a5f] bg-[#141414]/95 p-6 shadow-2xl backdrop-blur-xl animate-in fade-in zoom-in-95 duration-200">
             <button
               type="button"
               aria-label="Close export target chooser"
               onClick={() => setIsExportTargetChooserOpen(false)}
-              className="absolute right-4 top-4 rounded-lg p-1.5 text-gray-400 transition hover:bg-gray-100 hover:text-gray-700"
+              className="absolute right-4 top-4 p-1.5 text-gray-500 transition hover:bg-white/10 hover:text-gray-300"
             >
               <X className="size-4" />
             </button>
@@ -930,11 +930,11 @@ export function UseCasePromptPanel({
             <div className="pr-8">
               <p
                 id="implementation-export-target-title"
-                className="text-sm font-bold text-gray-950"
+                className="text-sm font-bold text-white"
               >
                 Choose export target
               </p>
-              <p className="mt-2 text-sm leading-6 text-gray-600">
+              <p className="mt-2 text-sm leading-6 text-gray-400">
                 This shapes the generated implementation prompt for the backend
                 structure you want.
               </p>
@@ -944,10 +944,10 @@ export function UseCasePromptPanel({
               <Button
                 type="button"
                 onClick={() => void handleChooseExportTarget('nextjs')}
-                className="h-auto min-h-24 w-full flex-col items-start gap-1.5 whitespace-normal rounded-[18px] bg-[#fff8f4] px-4 py-4 text-left text-[#ff7a45] shadow-sm hover:bg-[#fff0e8]"
+                className="h-auto min-h-24 w-full flex-col items-start gap-1.5 whitespace-normal bg-[#13213d] px-4 py-4 text-left text-[#3b82f6] shadow-sm hover:bg-[#13213d]"
               >
                 <span className="text-sm font-bold">Next.js</span>
-                <span className="block w-full text-xs leading-5 text-[#9a4b22]">
+                <span className="block w-full text-xs leading-5 text-[#93c5fd]">
                   App Router API routes and server modules under `src/lib/...`
                 </span>
               </Button>
@@ -956,10 +956,10 @@ export function UseCasePromptPanel({
                 type="button"
                 variant="outline"
                 onClick={() => void handleChooseExportTarget('express')}
-                className="h-auto min-h-24 w-full flex-col items-start gap-1.5 whitespace-normal rounded-[18px] border-gray-200 bg-white px-4 py-4 text-left text-gray-800 shadow-sm hover:bg-gray-50"
+                className="h-auto min-h-24 w-full flex-col items-start gap-1.5 whitespace-normal border-white/10 bg-[#141414] px-4 py-4 text-left text-gray-200 shadow-sm hover:bg-white/5"
               >
                 <span className="text-sm font-bold">Express</span>
-                <span className="block w-full text-xs leading-5 text-gray-500">
+                <span className="block w-full text-xs leading-5 text-gray-400">
                   Express router setup with `req` / `res` handlers
                 </span>
               </Button>
@@ -970,7 +970,7 @@ export function UseCasePromptPanel({
                 type="button"
                 variant="ghost"
                 onClick={() => setIsExportTargetChooserOpen(false)}
-                className="rounded-[12px] px-3 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-800"
+                className="px-3 text-sm text-gray-400 hover:bg-white/10 hover:text-gray-200"
               >
                 Cancel
               </Button>

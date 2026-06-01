@@ -57,7 +57,7 @@ export function EntityAttributesEditor({
   return (
     <div className="space-y-4">
       <div className="grid grid-cols-[1fr_1fr_auto_auto] items-end gap-3">
-        <p className="mb-2 text-[13px] font-mono font-bold lowercase tracking-widest text-[#ff7a45] w-full col-span-4 border-b border-gray-100 pb-2">
+        <p className="mb-2 text-[13px] font-mono font-bold lowercase tracking-widest text-[#3b82f6] w-full col-span-4 border-b border-white/10 pb-2">
           INDEXED ATTRIBUTES
         </p>
       </div>
@@ -79,12 +79,12 @@ export function EntityAttributesEditor({
 
             <div className="grid grid-cols-[clamp(100px,1fr,150px)_1fr_auto] items-end gap-3">
             <div>
-              <p className="mb-2 text-[12px] font-mono font-bold uppercase tracking-widest text-gray-400">
+              <p className="mb-2 text-[12px] font-mono font-bold uppercase tracking-widest text-gray-500">
                 Key
               </p>
               <div className="relative">
                 {isRelation ? (
-                  <div className="absolute left-4 top-1/2 -translate-y-1/2 text-[#ff7a45]">
+                  <div className="absolute left-4 top-1/2 -translate-y-1/2 text-[#3b82f6]">
                     <Link className="size-4" />
                   </div>
                 ) : null}
@@ -93,14 +93,14 @@ export function EntityAttributesEditor({
                   onChange={(e) =>
                     updateFieldName(nodeId, field.id, sanitizeIdentifier(e.target.value))
                   }
-                  className={`${inputClassName} ${isRelation ? 'pl-11 text-[#ff7a45]' : ''}`}
+                  className={`${inputClassName} ${isRelation ? 'pl-11 text-[#3b82f6]' : ''}`}
                   placeholder="Key"
                 />
               </div>
             </div>
 
             <div>
-              <p className="mb-2 text-[12px] font-mono font-bold uppercase tracking-widest text-gray-400">
+              <p className="mb-2 text-[12px] font-mono font-bold uppercase tracking-widest text-gray-500">
                 Value
               </p>
               <input
@@ -120,7 +120,7 @@ export function EntityAttributesEditor({
             </div>
 
             <div>
-              <p className="mb-2 text-[12px] font-mono font-bold uppercase tracking-widest text-gray-400">
+              <p className="mb-2 text-[12px] font-mono font-bold uppercase tracking-widest text-gray-500">
                 Type
               </p>
               <div className="relative w-32">
@@ -139,7 +139,7 @@ export function EntityAttributesEditor({
                   <option value="indexedString">String</option>
                   <option value="indexedNumber">Number</option>
                 </select>
-                <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 size-4 text-gray-400 pointer-events-none" />
+                <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 size-4 text-gray-500 pointer-events-none" />
               </div>
             </div>
             </div>
@@ -151,7 +151,7 @@ export function EntityAttributesEditor({
         size="sm"
         onClick={() => addField(nodeId)}
         variant="outline"
-        className="nodrag nopan h-12 w-full rounded-[14px] border border-dashed border-gray-300 text-gray-500 transition-all duration-300 hover:border-orange-400 hover:bg-orange-50/50 hover:text-orange-600 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98] shadow-none font-mono tracking-widest uppercase text-[12px] bg-transparent"
+        className="nodrag nopan h-12 w-full border border-dashed border-white/15 text-gray-400 transition-all duration-300 hover:border-blue-500 hover:bg-blue-950/50 hover:text-blue-400 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98] shadow-none font-mono tracking-widest uppercase text-[12px] bg-transparent"
       >
         <Plus className="mr-2 size-3.5 transition-transform group-hover:rotate-90" />
         Add Attribute
