@@ -79,7 +79,7 @@ export function EntityAttributesEditor({
 
             <div className="grid grid-cols-[clamp(100px,1fr,150px)_1fr_auto] items-end gap-3">
             <div>
-              <p className="mb-2 text-[12px] font-mono font-bold uppercase tracking-widest text-gray-500">
+              <p className="mb-2 text-[12px] font-mono font-bold uppercase tracking-widest text-white">
                 Key
               </p>
               <div className="relative">
@@ -100,7 +100,7 @@ export function EntityAttributesEditor({
             </div>
 
             <div>
-              <p className="mb-2 text-[12px] font-mono font-bold uppercase tracking-widest text-gray-500">
+              <p className="mb-2 text-[12px] font-mono font-bold uppercase tracking-widest text-white">
                 Value
               </p>
               <input
@@ -120,7 +120,7 @@ export function EntityAttributesEditor({
             </div>
 
             <div>
-              <p className="mb-2 text-[12px] font-mono font-bold uppercase tracking-widest text-gray-500">
+              <p className="mb-2 text-[12px] font-mono font-bold uppercase tracking-widest text-white">
                 Type
               </p>
               <div className="relative w-32">
@@ -139,7 +139,7 @@ export function EntityAttributesEditor({
                   <option value="indexedString">String</option>
                   <option value="indexedNumber">Number</option>
                 </select>
-                <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 size-4 text-gray-500 pointer-events-none" />
+                <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 size-4 text-white pointer-events-none" />
               </div>
             </div>
             </div>
@@ -151,7 +151,7 @@ export function EntityAttributesEditor({
         size="sm"
         onClick={() => addField(nodeId)}
         variant="outline"
-        className="nodrag nopan h-12 w-full border border-dashed border-white/15 text-gray-400 transition-all duration-300 hover:border-blue-500 hover:bg-blue-950/50 hover:text-blue-400 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98] shadow-none font-mono tracking-widest uppercase text-[12px] bg-transparent"
+        className="nodrag nopan h-12 w-full border border-dashed border-white/15 text-white transition-all duration-300 hover:border-blue-500 hover:bg-blue-950/50 hover:text-blue-400 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98] shadow-none font-mono tracking-widest uppercase text-[12px] bg-transparent"
       >
         <Plus className="mr-2 size-3.5 transition-transform group-hover:rotate-90" />
         Add Attribute

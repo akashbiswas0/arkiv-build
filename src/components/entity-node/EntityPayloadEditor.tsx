@@ -52,7 +52,7 @@ export function EntityPayloadEditor({
 
               <div className="grid grid-cols-[clamp(100px,1fr,150px)_1fr] items-end gap-3">
                 <div>
-                  <p className="mb-2 text-[12px] font-mono font-bold uppercase tracking-widest text-gray-500">
+                  <p className="mb-2 text-[12px] font-mono font-bold uppercase tracking-widest text-white">
                     Key
                   </p>
                   <input
@@ -69,7 +69,7 @@ export function EntityPayloadEditor({
                   />
                 </div>
                 <div>
-                  <p className="mb-2 text-[12px] font-mono font-bold uppercase tracking-widest text-gray-500">
+                  <p className="mb-2 text-[12px] font-mono font-bold uppercase tracking-widest text-white">
                     Value
                   </p>
                   <input
@@ -88,7 +88,7 @@ export function EntityPayloadEditor({
           size="sm"
           onClick={() => addDataField(nodeId)}
           variant="outline"
-          className="nodrag nopan h-12 w-full border border-dashed border-white/15 text-gray-400 transition-all duration-300 hover:border-blue-500 hover:bg-blue-950/50 hover:text-blue-400 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98] shadow-none font-mono tracking-widest uppercase text-[12px] bg-transparent"
+          className="nodrag nopan h-12 w-full border border-dashed border-white/15 text-white transition-all duration-300 hover:border-blue-500 hover:bg-blue-950/50 hover:text-blue-400 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98] shadow-none font-mono tracking-widest uppercase text-[12px] bg-transparent"
         >
           <Plus className="mr-2 size-3.5 transition-transform group-hover:rotate-90" />
           Add Data Field
@@ -107,7 +107,7 @@ export function EntityPayloadEditor({
         <p className="text-[13px] font-mono font-bold lowercase tracking-widest text-[#3b82f6]">
           ENTITY DATA
         </p>
-        <p className="text-[13px] font-mono text-gray-500">{data.entitySize} BYTES</p>
+        <p className="text-[13px] font-mono text-white">{data.entitySize} BYTES</p>
       </div>
       <EntityDataEditor entityData={data.entityData} nodeId={nodeId} />
     </div>

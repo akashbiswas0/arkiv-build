@@ -24,7 +24,7 @@ export function EntitySystemAttributes({
         className="nodrag nopan flex w-full items-center justify-between border border-white/10 bg-white/5 px-4 py-3 transition hover:bg-white/10"
       >
         <div className="flex items-center gap-2">
-          <span className="text-[12px] font-mono font-bold uppercase tracking-widest text-gray-400">
+          <span className="text-[12px] font-mono font-bold uppercase tracking-widest text-white">
             System Attributes
           </span>
           {data.explorerUrl ? (
@@ -41,9 +41,9 @@ export function EntitySystemAttributes({
           ) : null}
         </div>
         {open ? (
-          <ChevronUp className="size-4 text-gray-500" />
+          <ChevronUp className="size-4 text-white" />
         ) : (
-          <ChevronDown className="size-4 text-gray-500" />
+          <ChevronDown className="size-4 text-white" />
         )}
       </button>
 
@@ -51,7 +51,7 @@ export function EntitySystemAttributes({
         <div className="space-y-4 px-1">
           {data.systemAttributes.map((attribute) => (
             <div key={attribute.name}>
-              <p className="mb-2 text-[12px] font-mono font-bold uppercase tracking-widest text-gray-500">
+              <p className="mb-2 text-[12px] font-mono font-bold uppercase tracking-widest text-white">
                 {attribute.name}
               </p>
               <div className="nodrag nopan w-full border border-white/10 bg-white/5 p-4 font-mono text-sm text-white break-all">

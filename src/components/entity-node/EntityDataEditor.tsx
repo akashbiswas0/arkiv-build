@@ -48,7 +48,7 @@ export function EntityDataEditor({
 
           return (
             <div key={key}>
-              <p className="mb-2 text-[12px] font-mono font-bold uppercase tracking-widest text-gray-500">
+              <p className="mb-2 text-[12px] font-mono font-bold uppercase tracking-widest text-white">
                 {key}
               </p>
               <input

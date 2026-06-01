@@ -59,7 +59,7 @@ export function EntityHeader({
                   onChange={(e) =>
                     updateExpirationDuration(nodeId, e.target.value as ExpirationDuration)
                   }
-                  className="nodrag nopan bg-transparent text-sm font-mono text-gray-400 underline underline-offset-4 decoration-gray-300 outline-none cursor-pointer hover:text-gray-300 appearance-none pr-5 relative z-10"
+                  className="nodrag nopan bg-transparent text-sm font-mono text-white underline underline-offset-4 decoration-gray-300 outline-none cursor-pointer hover:text-white appearance-none pr-5 relative z-10"
                 >
                   {EXPIRATION_DURATION_OPTIONS.map((option) => (
                     <option key={option} value={option}>
@@ -67,10 +67,10 @@ export function EntityHeader({
                     </option>
                   ))}
                 </select>
-                <ChevronDown className="absolute right-0 top-1/2 -translate-y-1/2 size-3.5 text-gray-500 pointer-events-none" />
+                <ChevronDown className="absolute right-0 top-1/2 -translate-y-1/2 size-3.5 text-white pointer-events-none" />
               </div>
             ) : (
-              <span className="text-sm font-mono text-gray-400 underline underline-offset-4 decoration-gray-300">
+              <span className="text-sm font-mono text-white underline underline-offset-4 decoration-gray-300">
                 EXP: {getDurationLabel(data.expirationDuration)}
               </span>
             )}
@@ -88,7 +88,7 @@ export function EntityHeader({
 
           <button
             onClick={() => removeNode(nodeId)}
-            className="nodrag nopan flex size-8 shrink-0 items-center justify-center text-gray-500 transition hover:bg-white/10 hover:text-white"
+            className="nodrag nopan flex size-8 shrink-0 items-center justify-center text-white transition hover:bg-white/10 hover:text-white"
             title="Remove Entity"
           >
             <X className="size-5" />

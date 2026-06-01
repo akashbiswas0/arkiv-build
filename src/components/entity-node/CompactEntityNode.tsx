@@ -67,14 +67,14 @@ export function CompactEntityNode({
               </div>
 
               <div className="min-w-0">
-                <p className="text-[10px] font-mono font-bold uppercase tracking-widest text-gray-500">
+                <p className="text-[10px] font-mono font-bold uppercase tracking-widest text-white">
                   Entity
                 </p>
                 <p className="whitespace-nowrap pt-0.5 text-[14px] font-bold uppercase tracking-wide text-white">
                   {data.label || 'Untitled Entity'}
                 </p>
                 {data.entityKey ? (
-                  <p className="truncate pt-1 font-mono text-[11px] text-gray-400">
+                  <p className="truncate pt-1 font-mono text-[11px] text-white">
                     {data.entityKey}
                   </p>
                 ) : null}
@@ -83,7 +83,7 @@ export function CompactEntityNode({
 
             <button
               onClick={() => removeNode(id)}
-              className="nodrag nopan flex size-8 shrink-0 items-center justify-center text-gray-500 transition hover:bg-white/10 hover:text-white"
+              className="nodrag nopan flex size-8 shrink-0 items-center justify-center text-white transition hover:bg-white/10 hover:text-white"
               title="Remove Entity"
             >
               <X className="size-4" />
@@ -92,7 +92,7 @@ export function CompactEntityNode({
 
           {relationFields.length > 0 ? (
             <div className="space-y-2">
-              <p className="font-mono text-[10px] font-bold uppercase tracking-widest text-gray-500">
+              <p className="font-mono text-[10px] font-bold uppercase tracking-widest text-white">
                 Relations
               </p>
               <div className="flex flex-wrap gap-2">
