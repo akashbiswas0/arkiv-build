@@ -873,7 +873,7 @@ export function UseCasePromptPanel({
             value={input}
             onChange={(event) => setInput(event.target.value)}
             rows={1}
-            className="max-h-36 min-h-14 w-full resize-none overflow-y-auto border border-white/10 bg-[#141414] py-4 pl-4 pr-16 text-sm leading-6 text-gray-200 outline-none transition placeholder:text-gray-500 focus:border-[#1e3a5f] focus:ring-4 focus:ring-[#13213d]"
+            className="max-h-36 min-h-14 w-full resize-none overflow-y-auto rounded-lg border border-white/10 bg-[#141414] py-4 pl-4 pr-16 text-sm leading-6 text-gray-200 outline-none transition placeholder:text-gray-500 focus:border-[#1e3a5f] focus:ring-4 focus:ring-[#13213d]"
             placeholder={
               hasExistingModel
                 ? 'Ask for a schema change, new entity, or relationship...'
